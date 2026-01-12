@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('theme');
             $table->string('lang');
 
-            $table->foreignId('user_id')->unique()->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->unique()->constrained('users')->onDelete('cascade');
 
             $table->timestamps();
         });
