@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Settings;
+use App\Models\Order;
 
 class User extends Authenticatable
 {
@@ -49,5 +50,9 @@ class User extends Authenticatable
     public function settings()
     {
         return $this->hasOne(Settings::class);
+    }
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
     }
 }
