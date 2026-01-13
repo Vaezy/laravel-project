@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Settings;
 use App\Models\Order;
+use App\Models\Group;
 
 class User extends Authenticatable
 {
@@ -54,5 +55,9 @@ class User extends Authenticatable
     public function orders()
     {
         return $this->hasMany(Order::class);
+    }
+    public function groups()
+    {
+        return $this->belongsToMany(Group::class);
     }
 }
