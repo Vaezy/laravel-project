@@ -14,19 +14,10 @@ class SubscriptionOrderSeeder extends Seeder
      */
     public function run(): void
     {
-        $user = User::where('email', 'test@example.com')->first();
-
-        $subscription = SubscriptionOrder::create([
-            'name' => 'Coaching Mensuel',
-            'price' => 29.99,
-            'duration_months' => 1
-        ]);
-
-        $user->orders()->create([
-            'amount' => 29.99,
-            'status' => 'paid',
-            'orderable_id' => $subscription->id,
-            'orderable_type' => SubscriptionOrder::class
+        SubscriptionOrder::create([
+            'name'            => 'Coaching Mensuel',
+            'price'           => 29.99,
+            'duration_months' => 1,
         ]);
     }
 }
