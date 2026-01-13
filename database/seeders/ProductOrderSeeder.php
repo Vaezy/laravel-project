@@ -18,8 +18,8 @@ class ProductOrderSeeder extends Seeder
         $user = User::where('email', 'test@example.com')->first();
 
         $product = ProductOrder::create([
-            'name' => 'Ordinateur',
-            'price' => 99
+            'name' => 'Pack Photoshop',
+            'price' => 59.99
         ]);
 
         $user->orders()->create([
